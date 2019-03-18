@@ -1,4 +1,4 @@
-=== Mynote Plugin ===
+=== Mynote Admin ===
 
 Contributors: terrylin
 Tags: theme options, admin, admin interface, options
@@ -11,13 +11,13 @@ License URI: https://www.gnu.org/licenses/gpl.html
 
 == Description ==
 
-Mynote plugin enhances the functionity of Mynote Theme. If you are not using Mynote theme, it is unnecessary to install this plugin. Nothing will happens when Mynote theme isn't activated. 
+Mynote Admin is a WordPress plugin that enhances the functionity of Mynote Theme. If you are not using Mynote theme, it is unnecessary to install this plugin. Nothing will happens when Mynote theme isn't activated. 
 
 == Installation ==
 
 1. Upload the plugin files to the `/wp-content/plugins/mynote-plugin` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress.
-3. Go to the Mynote Plugin menu in Plugins and set your options.
+3. Go to the Mynote Admin menu in Plugins and set your options.
 
 == Features ==
 
@@ -26,8 +26,8 @@ Mynote plugin enhances the functionity of Mynote Theme. If you are not using Myn
 
 == Copyright ==
 
-Mynote Plugin, Copyright 2018 TerryL.in
-Mynote Plugin is distributed under the terms of the GNU GPL
+Mynote Admin, Copyright 2018 TerryL.in
+Mynote Admin is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
