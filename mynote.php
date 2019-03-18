@@ -1,6 +1,6 @@
 <?php
 /**
- * Mynote Plugin
+ * Mynote Admin
  *
  * @name Terry Lin
  * @link https://terryl.in/
@@ -11,8 +11,8 @@
  */
 
 /**
- * Plugin Name: Mynote Plugin
- * Plugin URI:  https://github.com/terrylinooo/mynote-plugin
+ * Plugin Name: Mynote Admin
+ * Plugin URI:  https://github.com/terrylinooo/mynote-admin
  * Description: A plugin that enhances Mynote theme's functionality. 
  * Version:     1.0.0
  * Author:      Terry Lin

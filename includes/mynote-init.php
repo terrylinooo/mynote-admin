@@ -41,7 +41,7 @@ class Mynote {
 	 * @return void
 	 */
 	public function front_enqueue_styles() {
-		wp_enqueue_style( 'mynote-md-css', MYNOTE_PLUGIN_URL . 'assets/css/style.css', array(), MYNOTE_PLUGIN_VERSION, 'all' );
+		//wp_enqueue_style( 'mynote-md-css', MYNOTE_PLUGIN_URL . 'assets/css/style.css', array(), MYNOTE_PLUGIN_VERSION, 'all' );
 	}
 
 	/**

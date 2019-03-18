@@ -157,6 +157,7 @@ class Mynote_Setting extends Mynote_Backend_Abstract {
 						'no'  => __( 'No', 'mynote-plugin' ),
 					)
 				),
+
 			),
 
 			'mynote_about' => array(
@@ -206,8 +207,8 @@ class Mynote_Setting extends Mynote_Backend_Abstract {
 			default:
 				$menu_function = 'add_' . $this->menu_position . '_page';
 				$menu_function(
-					__( 'Mynote Plugin ', 'mynote-plugin' ),
-					__( 'Mynote Plugin', 'mynote-plugin' ),
+					__( 'Mynote Admin', 'mynote-plugin' ),
+					__( 'Mynote Admin', 'mynote-plugin' ),
 					'manage_options',
 					$this->menu_slug, 
 					array( $this, 'setting_plugin_page' ),
