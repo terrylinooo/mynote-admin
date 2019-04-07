@@ -27,7 +27,7 @@ class Mynote_Setting extends Mynote_Backend_Abstract {
 	 *
 	 * @var string
 	 */
-	public $menu_slug = 'mynote-plugin';
+	public $menu_slug = 'mynote-admin';
 
 	/**
 	 * Constructer.
@@ -56,7 +56,7 @@ class Mynote_Setting extends Mynote_Backend_Abstract {
 	 */
 	public function admin_enqueue_styles( $hook_suffix ) {
 
-		if ( false === strpos( $hook_suffix, 'mynote-plugin' ) ) {
+		if ( false === strpos( $hook_suffix, 'mynote-admin' ) ) {
 			return;
 		}
 		wp_enqueue_style( 'custom_wp_admin_css', $this->mynote_plugin_url . 'assets/css/admin-setting.css', array(), $this->version, 'all' );
@@ -97,17 +97,17 @@ class Mynote_Setting extends Mynote_Backend_Abstract {
 
 			array(
 				'id'    => 'mynote_post_types',
-				'title' => __( 'Post types', 'mynote-plugin' ),
+				'title' => __( 'Post types', 'mynote-admin' ),
 			),
 			
 			array(
 				'id'    => 'mynote_widgets',
-				'title' => __( 'Widgets', 'mynote-plugin' ),
+				'title' => __( 'Widgets', 'mynote-admin' ),
 			),
 
 			array(
 				'id'    => 'mynote_about',
-				'title' => __( 'About', 'mynote-plugin' ),
+				'title' => __( 'About', 'mynote-admin' ),
 			),
 		);
 	}
@@ -134,13 +134,13 @@ class Mynote_Setting extends Mynote_Backend_Abstract {
 			'mynote_post_types' => array(
 				array(
 					'name'    => 'mynote_post_type_repository',
-					'label'   => __( 'GitHub Repository', 'mynote-plugin' ),
-					'desc'    => __( 'Display the stars, forks, issues from your GitHub repository.', 'mynote-plugin' ),
+					'label'   => __( 'GitHub Repository', 'mynote-admin' ),
+					'desc'    => __( 'Display the stars, forks, issues from your GitHub repository.', 'mynote-admin' ),
 					'type'    => 'radio',
 					'default' => 'no',
 					'options' => array(
-						'yes' => __( 'Yes', 'mynote-plugin' ),
-						'no'  => __( 'No', 'mynote-plugin' ),
+						'yes' => __( 'Yes', 'mynote-admin' ),
+						'no'  => __( 'No', 'mynote-admin' ),
 					)
 				),
 			),
@@ -148,13 +148,13 @@ class Mynote_Setting extends Mynote_Backend_Abstract {
 			'mynote_widgets' =>  array(
 				array(
 					'name'    => 'mynote_widget_bootstrap_toc',
-					'label'   => __( 'Bootstrap 4 TOC', 'mynote-plugin' ),
-					'desc'    => __( 'A widget that shows a Bootstrap 4 styled TOC deponds on your post content.', 'mynote-plugin' ),
+					'label'   => __( 'Bootstrap 4 TOC', 'mynote-admin' ),
+					'desc'    => __( 'A widget that shows a Bootstrap 4 styled TOC deponds on your post content.', 'mynote-admin' ),
 					'type'    => 'radio',
 					'default' => 'no',
 					'options' => array(
-						'yes' => __( 'Yes', 'mynote-plugin' ),
-						'no'  => __( 'No', 'mynote-plugin' ),
+						'yes' => __( 'Yes', 'mynote-admin' ),
+						'no'  => __( 'No', 'mynote-admin' ),
 					)
 				),
 
@@ -164,28 +164,28 @@ class Mynote_Setting extends Mynote_Backend_Abstract {
 
 				array(
 					'name'  => 'plugin_about_author',
-					'label' => __( 'Author', 'mynote-plugin' ),
+					'label' => __( 'Author', 'mynote-admin' ),
 					'desc'  => 'Terry L.',
 					'type'  => 'html'
 				),
 
 				array(
 					'name'  => 'plugin_about_version',
-					'label' => __( 'Version', 'mynote-plugin' ),
-					'desc'  => MYNOTE_PLUGIN_VERSION . '<br /><br />' . __( 'This plugin only works with Mynote theme. More features made for Mynote theme are going to be added in this plugin.', 'mynote-plugin' ),
+					'label' => __( 'Version', 'mynote-admin' ),
+					'desc'  => MYNOTE_PLUGIN_VERSION . '<br /><br />' . __( 'This plugin only works with Mynote theme. More features made for Mynote theme are going to be added in this plugin.', 'mynote-admin' ),
 					'type'  => 'html'
 				),
 
 				array(
 					'name'  => 'plugin_about_theme',
-					'label' => __( 'Mynote Theme', 'mynote-plugin' ),
+					'label' => __( 'Mynote Theme', 'mynote-admin' ),
 					'desc'  => '<a href="' . esc_url( 'https://github.com/terrylinooo/mynote' ) . '" target="_blank">https://github.com/terrylinooo/mynote</a>',
 					'type'  => 'html'
 				),
 
 				array(
 					'name'  => 'plugin_about_support',
-					'label' => __( 'Support', 'mynote-plugin' ),
+					'label' => __( 'Support', 'mynote-admin' ),
 					'desc'  => '<a href="' . esc_url( 'https://github.com/terrylinooo/mynote-plugin' ) . '" target="_blank">https://github.com/terrylinooo/mynote-plugin</a>',
 					'type'  => 'html'
 				),
@@ -207,8 +207,8 @@ class Mynote_Setting extends Mynote_Backend_Abstract {
 			default:
 				$menu_function = 'add_' . $this->menu_position . '_page';
 				$menu_function(
-					__( 'Mynote Admin', 'mynote-plugin' ),
-					__( 'Mynote Admin', 'mynote-plugin' ),
+					__( 'Mynote Admin', 'mynote-admin' ),
+					__( 'Mynote Admin', 'mynote-admin' ),
 					'manage_options',
 					$this->menu_slug, 
 					array( $this, 'setting_plugin_page' ),
@@ -245,7 +245,7 @@ class Mynote_Setting extends Mynote_Backend_Abstract {
 		}
 
 		if ( $file == $this->mynote_plugin_name ) {
-			$links[] = '<a href="' . admin_url( "plugins.php?page=" . $this->menu_slug ) . '">' . __( 'Settings', 'mynote-plugin' ) . '</a>';
+			$links[] = '<a href="' . admin_url( "plugins.php?page=" . $this->menu_slug ) . '">' . __( 'Settings', 'mynote-admin' ) . '</a>';
 			return $links;
 		}
 	}
@@ -263,8 +263,8 @@ class Mynote_Setting extends Mynote_Backend_Abstract {
 		}
 
 		if ( $file == $this->mynote_plugin_name ) {
-			$links[] = '<a href="https://github.com/terrylinooo/mynote-plugin" target="_blank">' . __( 'View GitHub project', 'mynote-plugin' ) . '</a>';
-			$links[] = '<a href="https://github.com/terrylinooo/mynote-plugin/issues" target="_blank">' . __( 'Report issues', 'mynote-plugin' ) . '</a>';
+			$links[] = '<a href="https://github.com/terrylinooo/mynote-plugin" target="_blank">' . __( 'View GitHub project', 'mynote-admin' ) . '</a>';
+			$links[] = '<a href="https://github.com/terrylinooo/mynote-plugin/issues" target="_blank">' . __( 'Report issues', 'mynote-admin' ) . '</a>';
 		}
 		return $links;
 	}

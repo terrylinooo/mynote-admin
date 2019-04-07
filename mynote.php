@@ -19,7 +19,7 @@
  * Author URI:  https://terryl.in/
  * License:     GPL 3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.txt
- * Text Domain: mynote-plugin
+ * Text Domain: mynote-admin
  * Domain Path: /languages
  */
 
@@ -57,7 +57,7 @@ define( 'MYNOTE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'MYNOTE_PLUGIN_PATH', __FILE__ );
 define( 'MYNOTE_PLUGIN_LANGUAGE_PACK', dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 define( 'MYNOTE_PLUGIN_VERSION', '1.0.1' );
-define( 'MYNOTE_PLUGIN_TEXT_DOMAIN', 'mynote-plugin' );
+define( 'MYNOTE_PLUGIN_TEXT_DOMAIN', 'mynote-admin' );
 
 /**
  * Start to run MYNOTE plugin cores.

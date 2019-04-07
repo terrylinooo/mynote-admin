@@ -22,10 +22,10 @@ class Mynote_Widget_Toc extends WP_Widget {
 
 		$widget_ops = array(
 			'classname'                   => 'widget_mynote_toc',
-			'description'                 => __( 'Add a Table of Content for your article. This widget is for single-post pages only.', 'mynote-plugin' ),
+			'description'                 => __( 'Add a Table of Content for your article. This widget is for single-post pages only.', 'mynote-admin' ),
 			'customize_selective_refresh' => true,
 		);
-		parent::__construct( 'mynote-toc', __( 'Mynote: Table of Content', 'mynote-plugin' ), $widget_ops );
+		parent::__construct( 'mynote-toc', __( 'Mynote: Table of Content', 'mynote-admin' ), $widget_ops );
 		$this->alt_option_name = 'widget_mynote_toc';
 
 		if ( is_active_widget( false, false, $this->id_base ) || is_customize_preview() ) {
