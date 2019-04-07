@@ -1,8 +1,8 @@
 {
-    "name": "terrylinooo/mynote-plugin",
+    "name": "terrylinooo/mynote-admin",
     "description": "Mynote plugin enhances the functionity of Mynote Theme. If you are not using Mynote theme, it is unnecessary to install this plugin. Nothing will happens when Mynote theme isn't activated.",
     "keywords": ["wordpress-plugin", "wordpress-theme-option"],
-    "homepage": "https://github.com/terrylinooo/mynote-plugin",
+    "homepage": "https://github.com/terrylinooo/mynote-admin",
     "license": "GPL-3.0-or-later",
     "authors": [
         {

@@ -7,14 +7,14 @@
  *
  * @package Mynote
  * @since 1.0.0
- * @version 1.0.0
+ * @version 1.0.1
  */
 
 /**
  * Plugin Name: Mynote Admin
  * Plugin URI:  https://github.com/terrylinooo/mynote-admin
  * Description: A plugin that enhances Mynote theme's functionality. 
- * Version:     1.0.0
+ * Version:     1.0.1
  * Author:      Terry Lin
  * Author URI:  https://terryl.in/
  * License:     GPL 3.0
@@ -56,7 +56,7 @@ define( 'MYNOTE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'MYNOTE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'MYNOTE_PLUGIN_PATH', __FILE__ );
 define( 'MYNOTE_PLUGIN_LANGUAGE_PACK', dirname( plugin_basename( __FILE__ ) ) . '/languages' );
-define( 'MYNOTE_PLUGIN_VERSION', '1.0.0' );
+define( 'MYNOTE_PLUGIN_VERSION', '1.0.1' );
 define( 'MYNOTE_PLUGIN_TEXT_DOMAIN', 'mynote-plugin' );
 
 /**
@@ -74,8 +74,8 @@ if ( version_compare( phpversion(), '5.1.0', '>=' ) ) {
 	$current_theme = wp_get_theme();
 
 	// This plugin only works when Mynote theme is activated.
-	if ( ! isset( $current_theme->Name ) && 'Mynote' === $current_theme->Name ) {
-		
+	if ( 'Mynote' === substr($current_theme->Name, 0, 6) ) {
+
 		$mynote = new Mynote();
 		$mynote->init();
 	}
