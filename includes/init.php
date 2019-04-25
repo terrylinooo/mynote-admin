@@ -32,6 +32,9 @@ class Mynote {
 		if ( is_admin() ) {
 			$setting = new Mynote_Setting();
 			$setting->init();
+
+			$carousel = new Mynote_Bootstrap_Carousel();
+			$carousel->init();
 		}
 	}
 

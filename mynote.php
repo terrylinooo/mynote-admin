@@ -64,10 +64,10 @@ define( 'MYNOTE_PLUGIN_TEXT_DOMAIN', 'mynote-admin' );
  */
 
 // Loadd Mynote Plugin's autoloader.
-require_once MYNOTE_PLUGIN_DIR . 'includes/mynote-autoload.php';
+require_once MYNOTE_PLUGIN_DIR . 'includes/autoload.php';
 
 // Load helper functions
-require_once MYNOTE_PLUGIN_DIR . 'includes/mynote-helpers.php';
+require_once MYNOTE_PLUGIN_DIR . 'includes/helpers.php';
 
 if ( version_compare( phpversion(), '5.1.0', '>=' ) ) {
 

@@ -20,13 +20,14 @@ spl_autoload_register( function( $class_name ) {
 	$class_name = ltrim( $class_name, '\\' );
 
 	$wp_utils_mapping = array(         
-		'Mynote'                      => '../mynote-init',
-		'Mynote_Backend_Abstract'     => 'class-mynote-abstract',
-		'Mynote_Register'             => 'class-mynote-register',
-		'Mynote_Setting'              => 'class-mynote-setting',
-		'Mynote_Post_Type_Repository' => 'class-mynote-post-type-repository',
-		'Mynote_Widget_Toc'           => 'class-mynote-widget-toc',
-		'Mynote_Settings_API'         => 'class-mynote-settings-api',
+		'Mynote'                      => '../init',
+		'Mynote_Backend_Abstract'     => 'backend/abstract',
+		'Mynote_Register'             => 'backend/register',
+		'Mynote_Setting'              => 'backend/setting',
+		'Mynote_Bootstrap_Carousel'   => 'backend/bootstrap-carousel',
+		'Mynote_Post_Type_Repository' => 'posttypes/repository',
+		'Mynote_Widget_Toc'           => 'widgets/toc',
+		'Mynote_Settings_API'         => 'utilities/settings-api',
 	);
 
 	if ( array_key_exists( $class_name, $wp_utils_mapping ) ) {
