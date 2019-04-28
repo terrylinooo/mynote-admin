@@ -1,0 +1,17 @@
+
+/* Carousel */
+
+.mynote-bootstrap-carousel {
+    position: relative; 
+    overflow: hidden;
+
+    .caption-title {
+        font-size: 1.25rem;
+        text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+    }
+
+    .caption-text {
+        font-size: 0.925rem;
+        text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+    }
+}

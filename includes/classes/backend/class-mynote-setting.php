@@ -59,7 +59,8 @@ class Mynote_Setting extends Mynote_Backend_Abstract {
 		if ( false === strpos( $hook_suffix, 'mynote-admin' ) ) {
 			return;
 		}
-		wp_enqueue_style( 'custom_wp_admin_css', $this->mynote_plugin_url . 'assets/css/admin-setting.css', array(), $this->version, 'all' );
+		wp_enqueue_style( 'mynote-admin-setting-css', $this->mynote_plugin_url . 'assets/css/mynote-admin-settings.css', array(), $this->version, 'all' );
+		wp_enqueue_script( 'mynote-setting-api', $this->mynote_plugin_url . 'assets/js/mynote-admin-setting-api.js', array( 'jquery' ), $this->version, true );
 	}
 
 	/**
@@ -101,8 +102,13 @@ class Mynote_Setting extends Mynote_Backend_Abstract {
 			),
 			
 			array(
-				'id'    => 'mynote_widgets',
-				'title' => __( 'Widgets', 'mynote-admin' ),
+				'id'    => 'mynote_modules',
+				'title' => __( 'Modules', 'mynote-admin' ),
+			),
+
+			array(
+				'id'    => 'mynote_tweaks',
+				'title' => __( 'Tweaks', 'mynote-admin' ),
 			),
 
 			array(
@@ -145,19 +151,65 @@ class Mynote_Setting extends Mynote_Backend_Abstract {
 				),
 			),
 
-			'mynote_widgets' =>  array(
+
+
+			'mynote_modules' =>  array(
+
+				/* Table of Conent */
+
 				array(
-					'name'    => 'mynote_widget_bootstrap_toc',
-					'label'   => __( 'Bootstrap 4 TOC', 'mynote-admin' ),
-					'desc'    => __( 'A widget that shows a Bootstrap 4 styled TOC deponds on your post content.', 'mynote-admin' ),
-					'type'    => 'radio',
-					'default' => 'no',
-					'options' => array(
-						'yes' => __( 'Yes', 'mynote-admin' ),
-						'no'  => __( 'No', 'mynote-admin' ),
-					)
+					'label'         => __( 'Table of Content', 'mynote-admin' ),
+					'section_title' => true,
+					'location_id'   => 'support-bootstrap-toc',
+					'desc'          => __( 'Bootstrap 4', 'mynote-admin' ),
+				),
+	
+				array(
+					'name'        => 'support_bootstrap_toc',
+					'desc'        => __( 'Display a TOC depends on your post content.', 'mynote-admin' ),
+					'type'        => 'toggle',
+					'has_child'   => true,
+					'location_id' => 'support-bootstrap-toc',
+					'default'     => 'no',
 				),
 
+				array(
+					'name'    => 'widget_bootstrap_toc',
+					'label'   => __( 'Widget', 'mynote-admin' ),
+					'desc'    => __( 'A widget that shows a Bootstrap 4 styled TOC.', 'mynote-admin' ),
+					'type'    => 'toggle',
+					'size'    => 'sm',
+					'default' => 'no',
+					'parent'  => 'support_bootstrap_toc',
+				),
+
+				/* Carousel */
+
+				array(
+					'label'         => __( 'Carousel', 'wp-githuber-md' ),
+					'section_title' => true,
+					'location_id'   => 'support-bootstrap-carousel',
+					'desc'          => __( 'Bootstrap 4', 'wp-githuber-md' ),
+				),
+	
+				array(
+					'name'        => 'support_bootstrap_carousel',
+					'desc'        => __( 'The carousel is a slideshow for cycling through a series of content.', 'mynote-admin' ),
+					'type'        => 'toggle',
+					'has_child'   => true,
+					'location_id' => 'support-bootstrap-carousel',
+					'default'     => 'no',
+				),
+
+				array(
+					'name'    => 'widget_bootstrap_toc',
+					'label'   => __( 'Widget', 'mynote-admin' ),
+					'desc'    => __( 'A widget that shows a Bootstrap 4 styled TOC.', 'mynote-admin' ),
+					'type'    => 'toggle',
+					'size'    => 'sm',
+					'default' => 'no',
+					'parent'  => 'support_bootstrap_carousel',
+				),
 			),
 
 			'mynote_about' => array(

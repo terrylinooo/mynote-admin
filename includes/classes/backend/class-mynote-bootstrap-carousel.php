@@ -46,7 +46,7 @@ class Mynote_Bootstrap_Carousel extends Mynote_Backend_Abstract {
 	 * Register JS files.
 	 */
 	public function admin_enqueue_scripts( $hook_suffix ) {
-        wp_enqueue_script( 'mynote-bootstrap4-carousel', $this->mynote_plugin_url . 'assets/js/mynote-bootstrap4-carousel.js', array(), $this->version, true );
+        wp_enqueue_script( 'mynote-bootstrap4-carousel', $this->mynote_plugin_url . 'assets/js/mynote-admin-bootstrap-carousel.js', array(), $this->version, true );
         wp_enqueue_media();
 
         // Registers and enqueues the required javascript.
@@ -123,9 +123,7 @@ class Mynote_Bootstrap_Carousel extends Mynote_Backend_Abstract {
 				<div style="display: flex; align-items: center;">
 					<div style="padding: 3px; width: 150px"><strong><?php _e( 'Description', 'mynote-admin' )?></strong></div>
 					<div style="padding: 3px; flex: 1">
-						<textarea name="mynote_carousel_description[1]" rows="3" class="mynote-carousel-description" style="width: 99%">
-							<?php esc_html_e( $description ); ?>
-						</textarea>
+						<textarea name="mynote_carousel_description[1]" rows="3" class="mynote-carousel-description" style="width: 99%"><?php esc_html_e( $description ); ?></textarea>
 					</div>
 				</div>
 			</div>
@@ -234,13 +232,13 @@ class Mynote_Bootstrap_Carousel extends Mynote_Backend_Abstract {
 
 		if ( !empty( $_POST['mynote_carousel_title'] ) && is_array( $_POST['mynote_carousel_title'] ) ) {
 			foreach ( $_POST['mynote_carousel_title'] as $k => $v ) {
-				$new[$k]['title'] = esc_html( $v );
+				$new[$k]['title'] = esc_html( trim( $v ) );
 			}
 		}
 
 		if ( !empty( $_POST['mynote_carousel_description'] ) && is_array( $_POST['mynote_carousel_description'] ) ) {
 			foreach ( $_POST['mynote_carousel_description'] as $k => $v ) {
-				$new[$k]['description'] = esc_html( $v );
+				$new[$k]['description'] = esc_html( trim( $v ) );
 			}
 		}
 

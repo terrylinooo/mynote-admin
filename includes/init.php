@@ -7,7 +7,7 @@
  *
  * @package Mynote
  * @since 1.0.0
- * @version 1.6.0
+ * @version 1.1.0
  */
 
 class Mynote {
@@ -18,7 +18,7 @@ class Mynote {
 	public function __construct() {
 
 		add_action( 'init', array( $this, 'load_textdomain' ) );
-		// add_action( 'wp_enqueue_scripts', array( $this, 'front_enqueue_styles' ), 998 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'front_enqueue_styles' ), 998 );
 	}
 	
 	/**
@@ -44,7 +44,7 @@ class Mynote {
 	 * @return void
 	 */
 	public function front_enqueue_styles() {
-		//wp_enqueue_style( 'mynote-md-css', MYNOTE_PLUGIN_URL . 'assets/css/style.css', array(), MYNOTE_PLUGIN_VERSION, 'all' );
+		wp_enqueue_style( 'mynote-md-css', MYNOTE_PLUGIN_URL . 'assets/css/styles.css', array(), MYNOTE_PLUGIN_VERSION, 'all' );
 	}
 
 	/**

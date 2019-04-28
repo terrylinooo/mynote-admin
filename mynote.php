@@ -67,7 +67,10 @@ define( 'MYNOTE_PLUGIN_TEXT_DOMAIN', 'mynote-admin' );
 require_once MYNOTE_PLUGIN_DIR . 'includes/autoload.php';
 
 // Load helper functions
-require_once MYNOTE_PLUGIN_DIR . 'includes/helpers.php';
+require_once MYNOTE_PLUGIN_DIR . 'includes/functions/mynote-helpers.php';
+
+// Load shortcodes
+require_once MYNOTE_PLUGIN_DIR . 'includes/functions/mynote-shortcodes.php';
 
 if ( version_compare( phpversion(), '5.1.0', '>=' ) ) {
 
